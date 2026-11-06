@@ -43,3 +43,18 @@ Executive Report Generator
 
 Success Criteria
 Users can identify high-value conservation areas and evaluate protection strategies using AI-driven insights and geospatial analysis.
+
+
+MVP Scope
+Phase 1
+AI Conservation Assistant
+Landing Page
+Bedrock Integration
+AWS Deployment
+Phase 2
+Map Visualization
+Conservation Scoring
+Phase 3
+GIS Analysis
+Scenario Simulation
+Multi-Agent Architecture
