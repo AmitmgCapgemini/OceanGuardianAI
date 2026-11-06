@@ -58,3 +58,41 @@ Phase 3
 GIS Analysis
 Scenario Simulation
 Multi-Agent Architecture
+
+
+OceanGuardian AI MVP
+Goal
+Help conservation organizations identify marine areas that require protection using AI-powered insights.
+
+User Story 1
+As a conservation analyst,
+
+I want to ask questions about marine biodiversity and protection coverage
+
+so that I can identify high-priority conservation areas.
+
+User Story 2
+As a WWF analyst,
+
+I want to receive recommendations for protection zones
+
+so that I can make data-driven conservation decisions.
+
+MVP Features
+Feature 1
+Home Page
+
+Feature 2
+AI Conservation Assistant
+
+Feature 3
+Conservation Recommendations
+
+Feature 4
+Report Summary
+
+Future Features
+Interactive Marine Map
+Scenario Simulation
+GIS Analysis
+Multi-Agent Architecture
