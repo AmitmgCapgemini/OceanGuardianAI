@@ -2,19 +2,16 @@ import { useState } from "react";
 
 function App() {
   const [question, setQuestion] = useState("");
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const analyzeQuestion = () => {
-    setResponse(`
-Priority Region: Coral Triangle
+    setLoading(true);
 
-Threat Level: High
-
-Protection Coverage: Low
-
-Recommendation:
-Expand Marine Protected Area coverage and prioritize coral reef conservation.
-    `);
+    setTimeout(() => {
+      setResponse(true);
+      setLoading(false);
+    }, 2000);
   };
 
   return (
@@ -26,7 +23,7 @@ Expand Marine Protected Area coverage and prioritize coral reef conservation.
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <h1>OceanGuardian AI</h1>
+      <h1>🌊 OceanGuardian AI</h1>
 
       <h2>Protecting Oceans Through Intelligent Conservation</h2>
 
@@ -57,25 +54,57 @@ Expand Marine Protected Area coverage and prioritize coral reef conservation.
         Analyze
       </button>
 
+      {loading && (
+        <p
+          style={{
+            marginTop: "20px",
+            color: "#0077b6",
+            fontWeight: "bold",
+          }}
+        >
+          Analyzing marine conservation data...
+        </p>
+      )}
+
       {response && (
         <div
           style={{
             marginTop: "30px",
-            padding: "20px",
-            background: "#f4f9ff",
-            borderRadius: "8px",
+            padding: "25px",
+            backgroundColor: "#f4f9ff",
+            border: "1px solid #d0e6f7",
+            borderRadius: "12px",
+            textAlign: "left",
           }}
         >
           <h3>Conservation Insight</h3>
 
-          <pre
-            style={{
-              whiteSpace: "pre-wrap",
-              fontFamily: "Arial",
-            }}
-          >
-            {response}
-          </pre>
+          <hr />
+
+          <p>
+            <strong>Priority Region</strong><br />
+            Coral Triangle
+          </p>
+
+          <p>
+            <strong>Threat Level</strong><br />
+            🔴 High
+          </p>
+
+          <p>
+            <strong>Protection Coverage</strong><br />
+            18%
+          </p>
+
+          <p>
+            <strong>Conservation Priority Score</strong><br />
+            92 / 100
+          </p>
+
+          <p>
+            <strong>Recommended Action</strong><br />
+            Expand Marine Protected Area coverage and prioritize coral reef conservation.
+          </p>
         </div>
       )}
     </div>
