@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [showAnalysis, setShowAnalysis] = useState(false);
 
-const demoEEZ = {
+const demoEEZ: any = {
   type: "Feature",
   properties: {
     name: "Indonesia Demo EEZ"
@@ -373,6 +373,7 @@ const regionData = {
 }
 
 export default App;
+
 
 
 
