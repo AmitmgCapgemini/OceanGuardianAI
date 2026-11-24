@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Indonesia Demo EEZ"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [115, -5],
+          [125, -5],
+          [125, 5],
+          [115, 5],
+          [115, -5]
+        ]]
+      }
+    }
+  ]
+}
