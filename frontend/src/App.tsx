@@ -4,7 +4,9 @@ import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from "react-leaflet";
 function App() {
 
   const [currentView, setCurrentView] = useState("home");
-  const [region, setRegion] = useState("Indonesia");
+  type Region = "Indonesia" | "Coral Triangle" | "Pacific Ocean" | "Indian Ocean" | "Caribbean Sea";
+
+const [region, setRegion] = useState<Region>("Indonesia");
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
   const [showAnalysis, setShowAnalysis] = useState(false);
@@ -108,15 +110,15 @@ const regionData = {
         </p>
 
         <p>
-          <strong>Priority Region:</strong> {regionData[region].priorityRegion}
+          <strong>Priority Region:</strong> {regionData[region as keyof typeof regionData].priorityRegion}
         </p>
 
         <p>
-          <strong>Threat Level:</strong> {regionData[region].threat}
+          <strong>Threat Level:</strong> {regionData[region as keyof typeof regionData].threat}
         </p>
 
         <p>
-          <strong>Priority Score:</strong> {regionData[region].score}
+          <strong>Priority Score:</strong> {regionData[region as keyof typeof regionData].score}
         </p>
 
         <p>
@@ -170,15 +172,15 @@ const regionData = {
         </p>
 
         <p>
-          <strong>Priority Region:</strong> {regionData[region].priorityRegion}
+          <strong>Priority Region:</strong> {regionData[region as keyof typeof regionData].priorityRegion}
         </p>
 
         <p>
-          <strong>Threat Level:</strong> {regionData[region].threat}
+          <strong>Threat Level:</strong> {regionData[region as keyof typeof regionData].threat}
         </p>
 
         <p>
-          <strong>Priority Score:</strong> {regionData[region].score}
+          <strong>Priority Score:</strong> {regionData[region as keyof typeof regionData].score}
         </p>
 
         <p>
@@ -231,15 +233,15 @@ const regionData = {
         </p>
 
         <p>
-          <strong>Priority Region:</strong> {regionData[region].priorityRegion}
+          <strong>Priority Region:</strong> {regionData[region as keyof typeof regionData].priorityRegion}
         </p>
 
         <p>
-          <strong>Threat Level:</strong> {regionData[region].threat}
+          <strong>Threat Level:</strong> {regionData[region as keyof typeof regionData].threat}
         </p>
 
         <p>
-          <strong>Priority Score:</strong> {regionData[region].score}
+          <strong>Priority Score:</strong> {regionData[region as keyof typeof regionData].score}
         </p>
 
         <div
@@ -251,7 +253,7 @@ const regionData = {
           }}
         >
           <MapContainer
-            center={regionData[region].coordinates}
+            center={regionData[region as keyof typeof regionData].coordinates}
             zoom={4}
             style={{ height: "100%", width: "100%" }}
           >
@@ -260,7 +262,7 @@ const regionData = {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <Marker position={regionData[region].coordinates}>
+            <Marker position={regionData[region as keyof typeof regionData].coordinates}>
               <Popup>
                 Indonesia Conservation Region
               </Popup>
@@ -373,6 +375,11 @@ const regionData = {
 }
 
 export default App;
+
+
+
+
+
 
 
 
