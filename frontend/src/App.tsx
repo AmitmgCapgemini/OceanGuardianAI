@@ -28,7 +28,12 @@ const demoEEZ: any = {
   }
 };
 
-const regionData = {
+const regionData: Record<string, {
+  priorityRegion: string;
+  threat: string;
+  score: number;
+  coordinates: [number, number];
+}> = {
   "Indonesia": {
     priorityRegion: "Coral Triangle",
     threat: "High",
@@ -323,7 +328,7 @@ const regionData = {
 
         <select
           value={region}
-          onChange={(e) => setRegion(e.target.value)}
+          onChange={(e) => setRegion(e.target.value as Region)}
         >
           <option>Indonesia</option>
           <option>Coral Triangle</option>
@@ -375,6 +380,8 @@ const regionData = {
 }
 
 export default App;
+
+
 
 
 
